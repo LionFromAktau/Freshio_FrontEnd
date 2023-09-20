@@ -1,0 +1,150 @@
+.choice{
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+}
+
+.choice-element{
+    width: calc(25% - 20px);
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+
+.choice-element:not(:nth-child(2)):before,
+.choice-element .top-elemet::before,
+.bottom::before{
+    content: "";
+    background-color: #555;
+    left: 0px;
+    top: 0px;
+    opacity: 0.1;
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    transition: 0.5s;
+}
+
+.choice-element:not(:nth-child(2)):after,
+.choice-element .top-elemet::after,
+.bottom::after{
+    content: "";
+    background-color: #555;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.1;
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    transition: 0.5s;
+}
+
+.choice-element:hover::before,
+.choice-element:hover::after,
+.top-elemet:hover:before,
+.top-elemet:hover:after,
+.bottom:hover::before,
+.bottom:hover::after{
+    width: 100%;
+    height: 100%;
+}
+
+.choice-element h2{
+    position: relative;
+    height: fit-content;
+    margin-top: 30%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.choice-element h2::after{
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0px;
+    transform: scaleX(0.5);
+    height: 1px;
+    width: 100%;
+    transition: 0.4s;
+    background-color: #fff;
+}
+
+.choice-element:not(:nth-child(2)):hover h2::after{
+    transform: scaleX(1);
+}
+
+.choice-element:nth-child(2){
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.top-elemet, .bottom{
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+.top-elemet{
+    height: 50%;
+    /* background-repeat: no-repeat; */
+    background-image: url("../../img/grid2.jpg");
+    display: flex;
+    align-items: center;
+}
+
+.choice-element:not(:nth-child(2)){
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.choice-element:first-child{
+    background-image: url("../../img/grid1.webp");
+}
+.choice-element:last-child{
+    background-image: url("../../img/grid5.webp");
+}
+
+.top-elemet h2,
+.bottom-element h2{
+    width: fit-content;
+    margin-top: 0px;
+    margin-left: 20%;
+    /* border: 1px solid; */
+}
+
+.top-elemet:hover h2::after,
+.bottom:hover h2::after{
+    transform: scaleX(1);
+}
+
+.bottom-element{
+    display: flex;
+    height: 50%;
+    gap: 20px;
+}
+
+.bottom{
+    width: calc(50%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bottom h2{
+    margin-top: 20%;
+}
+
+.bottom:first-child{
+    background-image: url("../../img/grid3.avif");
+}
+
+.bottom:last-child{
+    background-position: right;
+    background-image: url("../../img/grid4.avif");
+}
+
+.feature-content .red{
+    color: red;
+}
